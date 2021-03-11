@@ -1,0 +1,184 @@
+html body, main{
+padding:0;
+margin:0;
+text-align:center;
+max-width:100vw;
+}
+
+.sign-page {
+margin-top:170px;
+}
+.text-field {
+    text-align: center;
+    height: 50px;
+    font-size: 28px;
+    color: gray;
+    width: 400px;
+    margin: 10px 0px;
+    border: solid 1px darkgray;
+    border-radius: 10px;
+}
+.butt {
+    margin-top: 25px;
+    height: 50px;
+    width: 300px;
+    color:white;
+    font-size:24px;
+    border-radius:5px;
+    
+}
+.step-butt {
+    border: 0px;
+    background-color: blue;
+}
+.sign-page label {
+font-size:42px;
+}
+.back-butt {
+    background-color: blue;
+    margin-top: 25px;
+    height: 50px;
+    width: 300px;
+}
+.step2-butt {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    border: solid 2px rgba(0,0,255,0.4);
+    color: rgba(0,15,230,0.3);
+}
+
+.alter-butt {
+    width:200px;
+    height:40px;
+    border: solid 0px;
+    background-color: blueviolet;
+}
+.create-butt {
+    background-color: blue;
+}
+
+.direct {
+    margin:0px;
+    padding:0px;
+text-decoration:none;
+}
+    .direct:visited {
+        color: rgba(0,15,230,0.3);
+    }
+
+.stared {
+
+}
+.main{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+.text-field_prof {
+    text-align: center;
+    height: 30px;
+    font-size: 16px;
+    color: gray;
+    width: 200px;
+    margin: 10px 7px;
+    border: solid 1px darkgray;
+    border-radius: 10px;
+}
+.disable {
+display:none;
+}
+.red {
+color:red;
+}
+.date-container {
+    position:relative;
+}
+.date-create {
+    position: absolute;
+    bottom: 30px;
+    left:10px;
+}
+.text-select {
+  
+    text-align: center;
+    text-align-last: center;
+}
+
+.text-select option {
+    text-align: left;
+}
+.position-r {
+position:fixed;
+bottom:20px;
+right:30px;
+}
+.send-field_prof {
+    text-align: center;
+    height: 30px;
+    font-size: 16px;
+    color: gray;
+    width: 300px;
+    
+}
+.send-container {
+    border: solid 1px darkgray;
+    border-radius: 10px;
+    margin: 10px 7px;
+    min-width:300px;
+    min-height:30px;
+}
+    .send-container label:hover {
+        color: royalblue;
+        font-size: 20px;
+    }
+.file-create {
+
+    font-size: 18px;
+}
+
+.date {
+    text-align: center;
+    height: 30px;
+    font-size: 16px;
+    color: gray;
+    width: 200px;
+    margin: 10px 7px;
+    border: solid 1px darkgray;
+    border-radius: 10px;
+}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.flex-container-2{
+    display: flex;
+    justify-items:flex-start;
+    align-items:flex-start;
+}
+.sex {
+padding-bottom:5px;
+}
+.correct-t {
+padding-bottom:2px;
+}
+.row {
+margin-right:15px;
+}
+    .row .flex-container {
+    margin-top:10px;
+    }
+.send {
+margin-top:30px;
+}
+.table {
+
+border:solid 2px black;
+}
+th, td {
+    border: solid 1px black;
+}
+
+
+
