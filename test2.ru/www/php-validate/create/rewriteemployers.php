@@ -1,6 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 session_start();
+$id = filter_var(trim($_POST['id']), FILTER_SANITIZE_STRING);
 $name = filter_var(trim($_POST['name']), FILTER_SANITIZE_STRING);
 $surname = filter_var(trim($_POST['surname']), FILTER_SANITIZE_STRING);
 $lastname = filter_var(trim($_POST['lastname']), FILTER_SANITIZE_STRING);
@@ -20,44 +21,52 @@ $instagram = filter_var(trim($_POST['instagram']), FILTER_SANITIZE_STRING);
 $Work = filter_var(trim($_POST['Work']), FILTER_SANITIZE_STRING);
 $EducatePlace = filter_var(trim($_POST['EducatePlace']), FILTER_SANITIZE_STRING);
 
+
+
+
+if($_FILES["resume"]["name"] != null){
 $resume = $_FILES["resume"]["size"].'-'.$_FILES["resume"]["name"];
-$testpdf = $_FILES["testpdf"]["size"].'-'.$_FILES["testpdf"]["name"];
 
 if(is_uploaded_file($_FILES["resume"]["tmp_name"]))
    {
      move_uploaded_file($_FILES["resume"]["tmp_name"], "../../resume/" . $resume);
    } else {
-      echo("ÐžÑˆÐ¸Ð±ÐºÐ° Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ¸ Ñ€ÐµÐ·ÑŽÐ¼Ðµ");
+      echo("Îøèáêà çàãðóçêè ðåçþìå");
    }
+   }
+   if($_FILES["testpdf"]["name"] != null){
+   $testpdf = $_FILES["testpdf"]["size"].'-'.$_FILES["testpdf"]["name"];
 if(is_uploaded_file($_FILES["testpdf"]["tmp_name"]))
    {
      move_uploaded_file($_FILES["testpdf"]["tmp_name"], "../../testWork/" . $testpdf );
    } else {
-      echo("ÐžÑˆÐ¸Ð±ÐºÐ° Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ¸ Ñ‚ÐµÑÑ‚Ð¾Ð²Ð¾Ð³Ð¾ Ð·Ð°Ð´Ð°Ð½Ð¸Ñ");
+      echo("Îøèáêà çàãðóçêè òåñòîâîãî çàäàíèÿ");
+
    }
+
+}
+
 
 $mysql = new mysqli('localhost', 'sila', 'test', 'admin');
 mysqli_set_charset($mysql, 'utf8');
-$mysql->query("INSERT INTO `employers` (`Name` , `Surname`,
-                                        `Lastname` , `Sex`,
-                                        `Birth` , `Education`,
-                                        `City` , `Tel`,
-                                        `Email` , `Social`,
-                                        `Meetday` , `Testtime`,
-                                        `Datevacantion` , `Comment`,
-                                        `resume` , `testWork`,
-                                        `vk` , `instagram`,
-                                        `Work` , `EducatePlace`)
-VALUES('$name','$surname',
-       '$lastname','$sex',
-       '$birth','$education',
-       '$city','$tel',
-       '$email','$social',
-       '$meetday','$testtime',
-       '$datevacantion','$comment',
-       '$resume','$testpdf',
-       '$vk','$instagram',
-       '$Work','$EducatePlace') ");
+$mysql->query("UPDATE `employers` SET `Name` = '$name' , `Surname` = '$surname',
+                                        `Lastname` = '$lastname' , `Sex` = '$sex',
+                                        `Birth` = '$birth' , `Education` = '$education',
+                                        `City` = '$city' , `Tel` = '$tel',
+                                        `Email` = '$email' , `Social` = '$social',
+                                        `Meetday` = '$meetday' , `Testtime` = '$testtime',
+                                        `Datevacantion` = '$datevacantion' , `Comment` = '$comment',
+                                        `vk` = '$vk' , `instagram` = '$instagram',
+                                        `Work` = '$Work' , `EducatePlace` = '$EducatePlace'  WHERE `id` = '$id' ");
+
+
+if($_FILES["resume"]["name"] != null){
+$mysql->query("UPDATE `employers` SET `resume` = '$resume' WHERE `id` = '$id'  ");
+}
+if($_FILES["testpdf"]["name"] != null){
+$mysql->query("UPDATE `employers` SET `testWork` = '$testpdf' WHERE `id` = '$id'  ");
+}
+
 $mysql->close();
 header('Location:/');
 ?>
