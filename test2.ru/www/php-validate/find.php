@@ -1,6 +1,24 @@
 
 <table>
  <?php
+
+$name = filter_var(trim($_POST['name']), FILTER_SANITIZE_STRING);
+$surname = filter_var(trim($_POST['surname']), FILTER_SANITIZE_STRING);
+$lastname = filter_var(trim($_POST['lastname']), FILTER_SANITIZE_STRING);
+$birth = filter_var(trim($_POST['birth']), FILTER_SANITIZE_STRING);
+$sex = filter_var(trim($_POST['sex']), FILTER_SANITIZE_STRING);
+$education = filter_var(trim($_POST['Education']), FILTER_SANITIZE_STRING);
+$city = filter_var(trim($_POST['city']), FILTER_SANITIZE_STRING);
+$tel = filter_var(trim($_POST['tel']), FILTER_SANITIZE_STRING);
+$email = filter_var(trim($_POST['email']), FILTER_SANITIZE_STRING);
+$social = filter_var(trim($_POST['social']), FILTER_SANITIZE_STRING);
+$meetday = filter_var(trim($_POST['meetday']), FILTER_SANITIZE_STRING);
+$testtime = filter_var(trim($_POST['testtime']), FILTER_SANITIZE_STRING);
+$datevacantion = filter_var(trim($_POST['datevacantion']), FILTER_SANITIZE_STRING);
+$vk = filter_var(trim($_POST['vk']), FILTER_SANITIZE_STRING);
+$instagram = filter_var(trim($_POST['instagram']), FILTER_SANITIZE_STRING);
+$Work = filter_var(trim($_POST['Work']), FILTER_SANITIZE_STRING);
+
  $mysql = new mysqli('localhost', 'sila', 'test', 'admin');
  mysqli_set_charset($mysql, 'utf8');
 if(!$mysql->query("SELECT * FROM `employers`"))
@@ -8,6 +26,7 @@ if(!$mysql->query("SELECT * FROM `employers`"))
 $result = $mysql->query("SELECT * FROM `employers`");
 echo '<tr><th>Имя</th><th>Фамилия</th><th>Отчество</th><th>Пол</th><th>Дата рождения</th><th>Образование</th><th>Места учебы</th><th>Должность</th><th>Город</th><th>Телефон</th><th>Почта</th><th>Соц. сеть</th><th>Дата собеседования</th><th>Дата стажировки</th><th>Дата размещения вакансии</th><th>Комментарий</th><th>Резюме</th><th>Тестовое задание</th><th>Редактирование</th></tr>';
 while ( $row = mysqli_fetch_assoc( $result ) ) {
+if(($row['Name'] == $name or $name == '') and ($row['Surname'] == $surname or $surname == '') and ($row['Lastname'] == $lastname or $lastname == '') and ($row['Birth'] == $birth or $birth == '') and ($row['Sex'] == $sex or $sex == '') and ($row['Education'] == $education or $education == '') and ($row['City'] == $city or $city == '') and ($row['Tel'] == $tel or $tel == '') and ($row['Email'] == $email or $email == '') and ($row['Social'] == $social or $social == '') and ($row['vk'] == $vk or $vk == '') and ($row['instagram'] == $instagram or $instagram == '') and ($row['Work'] == $work or $work == '') and ($row['Meetday'] == $meetday or $meetday == '') and ($row['Testtime'] == $testtime or $testtime == '') and ($row['Datevacantion'] == $datevacantion or $datevacantion == '')){
  echo '<tr><td class="Name-table">';
     print_r( $row['Name'] );
  echo '</td><td class="Surname-table">';
@@ -70,10 +89,15 @@ echo '</td><td class="Place-table">';
         echo '<a class="alter-butt butt butt-table butt-table-1" href="../pages/Reduct.php?id=';
         print_r($row['id']);
         echo '" >Редактировать</a>' ;
-        echo '<button  class="alter-butt butt butt-table butt-table-2" >Удалить</button>' ;
- echo '</td>';
+        echo '<a id="fake-delete"  class="alter-butt butt butt-table butt-table-2 grey">Удалить</a>';
+        echo '<a id="delete"  class="alter-butt butt butt-table butt-table-2 disabled" href="../pages/delete.php?id=';     
+        print_r($row['id']);
+        echo '">Удалить</a>' ;
+        echo '<a  id="still-delete"  class="disabled alter-butt butt butt-table butt-table-3 " >Скрыть</a>';
+    echo '</td>';
  
  echo '</tr>';
+ }
  }
 $mysql->close();
  ?>

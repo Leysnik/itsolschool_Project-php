@@ -14,10 +14,10 @@ require('../php-validate/validate/session.php');
         require('../pages/header.php');      
 
  ?>
-    <main class="table">
+    <main >
                 <?php
         
-      require('../php-validate/find.php');  
+      require('../php-validate/find-p.php');  
  ?>
 
 
