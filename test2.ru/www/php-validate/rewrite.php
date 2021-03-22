@@ -1,7 +1,6 @@
 <?php
 $id = $_GET[ 'id' ];
- $mysql = new mysqli('localhost', 'a0525384_test', 'sila', 'a0525384_admin');
- mysqli_set_charset($mysql, 'utf8');
+ require('validate/connect.php');
 if(!$mysql->query("SELECT * FROM `employers`"))
      echo $mysql->error;
 $result = $mysql->query("SELECT * FROM `employers` WHERE id = '$id'");

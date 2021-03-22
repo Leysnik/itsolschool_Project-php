@@ -36,8 +36,7 @@ if(is_uploaded_file($_FILES["testpdf"]["tmp_name"]))
       echo("Ошибка загрузки тестового задания");
    }
 
-$mysql = new mysqli('localhost', 'a0525384_test', 'sila', 'a0525384_admin');
-mysqli_set_charset($mysql, 'utf8');
+require('../validate/connect.php');
 $mysql->query("INSERT INTO `employers` (`Name` , `Surname`,
                                         `Lastname` , `Sex`,
                                         `Birth` , `Education`,

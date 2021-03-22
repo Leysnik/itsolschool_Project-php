@@ -17,6 +17,7 @@ require('../php-validate/validate/session.php');
         <section class="sign-page">
             <form action="../php-validate/validate/check.php" method="post">
                 <div><h2  class="reg"><label>Регистрация нового аккаунта</label></h2></div>
+                <div class="form-item"><input name="name" id="login" class="text-field" type="text" placeholder="ФИО"></div>
                 <div class="form-item"><input name="login" id="login" class="text-field" type="text" placeholder="Логин"></div>
                
                 <div class="form-item"><input name="pass" id="pass" class="text-field" type="password" placeholder="Пароль" ></div>
@@ -30,6 +31,5 @@ require('../php-validate/validate/session.php');
             </form>
         </section>
         </main>
-    <script src="../scripts/checkNew.js"></script>
 </body>
 </html>

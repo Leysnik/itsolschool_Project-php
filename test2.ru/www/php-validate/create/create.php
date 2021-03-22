@@ -69,11 +69,13 @@
         <div class="flex-container">
         <label >Телефон</label>
     <input type="tel" name="tel" id="tel" class="text-field_prof" value="" placeholder="Телефон" required>
+            <div id="tel-d" class="red disable">Такой телефон уже есть в базе</div>
                     </div>
         <div class="flex-container">
         <label >Email</label>
     <input type="email" id="email" name="email" class="text-field_prof" value="" placeholder="Email">
-                    </div>
+        <div class="red disable" id="email-d">Такая почта уже есть в базе</div>            
+        </div>
       </div>
 
 
@@ -105,16 +107,19 @@
     <div class="flex-container-2">
         <div class="flex-container">
         <label >VK</label>
-    <input type="text" name="vk"  class="text-field_prof" value="" placeholder="Вконтакте">
+    <input type="text" name="vk" id="vk"  class="text-field_prof" value="" placeholder="Вконтакте">
+            <div id="vk-d" class="red disable">Такой аккаунт уже есть в базе</div>
                     </div>
         <div class="flex-container">
         <label >INSTAGRAM</label>
-    <input type="text" name="instagram" class="text-field_prof" value="" placeholder="Инстаграм">
-                    </div>
+    <input type="text" name="instagram" id="instagram" class="text-field_prof" value="" placeholder="Инстаграм">
+        <div id="instagram-d" class="red disable">Такой аккаунт уже есть в базе</div>            
+        </div>
         <div class="flex-container">
         <label >Дополнительная соц. сеть</label>
-    <input type="text" name="social" class="text-field_prof" value="" placeholder="Дополнительная соц. сеть">  
-                    </div>
+    <input type="text" name="social" id="social" class="text-field_prof" value="" placeholder="Дополнительная соц. сеть">  
+        <div id="social-d" class="red disable">Такой аккаунт уже есть в базе</div>            
+        </div>
       </div>
 
     <div class="flex-container send">

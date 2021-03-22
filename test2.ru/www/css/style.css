@@ -241,6 +241,33 @@ tr:hover:first-child {
 div .reg label {
 font-size:32px; 
 }
+.h-butt {
+    padding: 2px 3px;
+    border: solid 2px rgba(0,0,255,0.4);
+    color: rgba(0,15,230,0.6);
+}
+.navigate {
+margin-top:5px;
+}
+.login {
+    max-width:110px;
+position:absolute;
+top:0px;
+right:10px;
+}
+    .login span {
+    display:block;
+    margin-bottom:4px;
+    }
+.exit {
+    font-size:16px;
+    padding: 2px 3px;
+    border: solid 2px rgba(245, 12, 12,0.5);
+    color: rgba(245, 12, 12,0.4);
+}
+    .exit:visited {
+        color: rgba(245, 12, 12,0.4);
+    }
 
 
 

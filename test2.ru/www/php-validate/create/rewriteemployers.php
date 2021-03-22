@@ -47,8 +47,8 @@ if(is_uploaded_file($_FILES["testpdf"]["tmp_name"]))
 }
 
 
-$mysql = new mysqli('localhost', 'a0525384_test', 'sila', 'a0525384_admin');
-mysqli_set_charset($mysql, 'utf8');
+require('../validate/connect.php');
+
 $mysql->query("UPDATE `employers` SET `Name` = '$name' , `Surname` = '$surname',
                                         `Lastname` = '$lastname' , `Sex` = '$sex',
                                         `Birth` = '$birth' , `Education` = '$education',
