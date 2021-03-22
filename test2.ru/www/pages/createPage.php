@@ -5,7 +5,7 @@ require('../php-validate/validate/session.php');
 <html lang="ru">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>БД</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../img/icon.png" type="image/png">
 </head>
@@ -13,7 +13,7 @@ require('../php-validate/validate/session.php');
     <main>
                 <?php
         require('../pages/header.php');      
-      require('../php-validate/create/create2.php');  
+      require('../php-validate/create/create.php');  
  ?>
 
 

@@ -85,9 +85,6 @@ align-items:center;
     border: solid 1px darkgray;
     border-radius: 10px;
 }
-.disable {
-display:none;
-}
 .red {
 color:red;
 }
@@ -110,8 +107,8 @@ color:red;
 }
 .position-r {
 position:fixed;
-bottom:20px;
-right:30px;
+bottom:30px;
+right:20px;
 }
 .send-field_prof {
     text-align: center;
@@ -175,7 +172,7 @@ margin-top:30px;
 .table {
     display: inline-block;
     max-width:10000px;
-    margin:0px 10px;
+    margin:40px 10px;
     border-collapse: collapse;
     border:solid 2px black;
     border-radius:10px;
@@ -184,7 +181,6 @@ table {
     border-collapse: collapse;
 }
 th, td {
-    border-radius: 10px;
     border: solid 1px black;
     border-collapse: collapse;
 }
@@ -198,14 +194,53 @@ width:100px;
 margin:2px 0px;
 }
 .butt-table-2 {
-background-color:rgba(254, 30, 30,0.65);
-color:black;
-}
-.butt-table-1 {
-   padding-top:10px;
-    display:block;
-    background-color: rgba(176, 245, 27,0.65);
+    padding-top: 10px;
+    display: block;
+    background-color: rgba(254, 30, 30,0.65);
     color: black;
 }
+    .butt-table-2:visited, .butt-table-1:visited {
+        color: black;
+    }
+.butt-table-1 {
+        padding-top: 10px;
+        display: block;
+        background-color: rgba(176, 245, 27,0.65);
+        color: black;
+    }
+.disabled {
+display:none !important;
+}
+.disable {
+    display: none;
+}
+.butt-table-3 {
+    padding-top: 10px;
+    display: block;
+    background-color: rgba(247, 196, 27,0.65);
+    color: black;
+}
+.grey {
+background-color:rgba(111, 109, 109,0.5);
+
+}
+.position-l {
+position:absolute;
+top:20px;
+left:30px;
+}
+.position-l:visited {
+    color: white;
+}
+tr:hover {
+    background-color:rgba(255, 172, 0, 0.1);
+}
+tr:hover:first-child {
+    background-color: white;
+}
+div .reg label {
+font-size:32px; 
+}
+
 
 

@@ -1,6 +1,6 @@
 <section class="flex-container">
     <h1 id="main">Поиск резюме</h1>
-<form action="../pages/findPage.php" method="post" enctype="multipart/form-data" class="flex-container">
+<form action="../pages/findPage.php" method="get" class="flex-container">
     <div class="flex-container-2">
     <div class="flex-container row">
     <div class="flex-container">
@@ -41,7 +41,7 @@
         <div class="flex-container row">
         <div class="flex-container sex">
         <label >Образование</label>
-    <select  placeholder="Образование" name="Education" class="text-field_prof text-select">
+    <select  placeholder="Образование" name="education" class="text-field_prof text-select">
         <option></option>
     <option >Начальное образование</option>
     <option >Среднее общее образование</option>
@@ -54,7 +54,7 @@
           
         <div class="flex-container">
         <label >Должность</label>
-    <input type="text" name="Work" class="text-field_prof correct-t" value="" placeholder="Должность" >
+    <input type="text" name="work" class="text-field_prof correct-t" value="" placeholder="Должность" >
                     </div>
 
             </div>
@@ -111,8 +111,9 @@
     <input type="text" name="social" class="text-field_prof" value="" placeholder="Дополнительная соц. сеть">  
                     </div>
       </div>
-
-   
-    <input id="create" type="submit" class="alter-butt butt position-r" value="Поиск" >
+    <div class="flex-container-2">
+    <input id="create" type="submit" class="alter-butt butt " value="Поиск" >
+        </div>
 </form>
+   
 </section>

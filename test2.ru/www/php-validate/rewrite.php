@@ -1,6 +1,6 @@
 <?php
 $id = $_GET[ 'id' ];
- $mysql = new mysqli('localhost', 'sila', 'test', 'admin');
+ $mysql = new mysqli('localhost', 'a0525384_test', 'sila', 'a0525384_admin');
  mysqli_set_charset($mysql, 'utf8');
 if(!$mysql->query("SELECT * FROM `employers`"))
      echo $mysql->error;
@@ -10,7 +10,7 @@ $row = mysqli_fetch_assoc( $result);
 <section class="flex-container">
     <h1 id="main">Редактировать резюме</h1>
 <form action="../php-validate/create/rewriteemployers.php" method="post" enctype="multipart/form-data" class="flex-container">
-    <input type="text" name="id" class="text-field_prof disable" value="<?php echo $id;?>" required>
+    <input type="text" name="id" class="text-field_prof disabled" value="<?php echo $id;?>" >
     <div class="flex-container-2">
     <div class="flex-container row">
     <div class="flex-container">
@@ -51,7 +51,7 @@ $row = mysqli_fetch_assoc( $result);
         <div class="flex-container row">
         <div class="flex-container sex">
         <label >Образование</label>
-    <select required placeholder="Образование" name="Education" class="text-field_prof text-select">
+    <select required placeholder="Образование" name="education" class="text-field_prof text-select">
         <option><?php print_r($row['Education']);?></option>
     <option >Начальное образование</option>
     <option >Среднее общее образование</option>
@@ -63,13 +63,12 @@ $row = mysqli_fetch_assoc( $result);
                     </div>
     <div class="flex-container">
         <label >Места обучения</label>
-    <textarea name="EducatePlace" class="text-field_prof" value="" placeholder="Места обучения" required><?php print_r($row['EducatePlace']);?>
-</textarea>
+    <textarea name="educatePlace" class="text-field_prof" value="" placeholder="Места обучения" required><?php print_r($row['EducatePlace']);?></textarea>
     </div>
           
         <div class="flex-container">
         <label >Должность</label>
-    <input type="text" name="Work" class="text-field_prof correct-t" value="<?php print_r($row['Work']);?>" placeholder="Должность" >
+    <input type="text" name="work" class="text-field_prof correct-t" value="<?php print_r($row['Work']);?>" placeholder="Должность" >
                     </div>
 
             </div>
@@ -115,11 +114,11 @@ $row = mysqli_fetch_assoc( $result);
     <div class="flex-container-2">
         <div class="flex-container">
         <label >VK</label>
-    <input type="text" name="vk"  class="text-field_prof" value="<?php print_r($row['vk']);?>" placeholder="Вконтакте">
+    <input type="text" name="vk"  class="text-field_prof" value="<?php print_r($row['VK']);?>" placeholder="Вконтакте">
                     </div>
         <div class="flex-container">
         <label >INSTAGRAM</label>
-    <input type="text" name="instagram" class="text-field_prof" value="<?php print_r($row['instagram']);?>" placeholder="Инстаграм">
+    <input type="text" name="instagram" class="text-field_prof" value="<?php print_r($row['Instagram']);?>" placeholder="Инстаграм">
                     </div>
         <div class="flex-container">
         <label >Дополнительная соц. сеть</label>
@@ -130,13 +129,13 @@ $row = mysqli_fetch_assoc( $result);
     <div class="flex-container send">
     <div class="send-container">
     <label for="resume" class="file-create">Резюме</label>
-    <input id="resume" type="file" name="resume" class="send-field_prof disable" value="">
+    <input id="resume" type="file" name="resume" class="send-field_prof disabled" value="">
     </div>
   
     
     <div class="send-container">
         <label for="testpdf" class="file-create">Тестовое задание</label>
-    <input id="testpdf" type="file" name="testpdf" class="send-field_prof disable" value="">
+    <input id="testpdf" type="file" name="testpdf" class="send-field_prof disabled" value="">
     </div>
         </div>
    

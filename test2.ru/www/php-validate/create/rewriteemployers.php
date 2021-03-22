@@ -7,7 +7,7 @@ $surname = filter_var(trim($_POST['surname']), FILTER_SANITIZE_STRING);
 $lastname = filter_var(trim($_POST['lastname']), FILTER_SANITIZE_STRING);
 $birth = filter_var(trim($_POST['birth']), FILTER_SANITIZE_STRING);
 $sex = filter_var(trim($_POST['sex']), FILTER_SANITIZE_STRING);
-$education = filter_var(trim($_POST['Education']), FILTER_SANITIZE_STRING);
+$education = filter_var(trim($_POST['education']), FILTER_SANITIZE_STRING);
 $city = filter_var(trim($_POST['city']), FILTER_SANITIZE_STRING);
 $tel = filter_var(trim($_POST['tel']), FILTER_SANITIZE_STRING);
 $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_STRING);
@@ -18,8 +18,8 @@ $datevacantion = filter_var(trim($_POST['datevacantion']), FILTER_SANITIZE_STRIN
 $comment = filter_var(trim($_POST['comment']), FILTER_SANITIZE_STRING);
 $vk = filter_var(trim($_POST['vk']), FILTER_SANITIZE_STRING);
 $instagram = filter_var(trim($_POST['instagram']), FILTER_SANITIZE_STRING);
-$Work = filter_var(trim($_POST['Work']), FILTER_SANITIZE_STRING);
-$EducatePlace = filter_var(trim($_POST['EducatePlace']), FILTER_SANITIZE_STRING);
+$work = filter_var(trim($_POST['work']), FILTER_SANITIZE_STRING);
+$educatePlace = filter_var(trim($_POST['educatePlace']), FILTER_SANITIZE_STRING);
 
 
 
@@ -47,7 +47,7 @@ if(is_uploaded_file($_FILES["testpdf"]["tmp_name"]))
 }
 
 
-$mysql = new mysqli('localhost', 'sila', 'test', 'admin');
+$mysql = new mysqli('localhost', 'a0525384_test', 'sila', 'a0525384_admin');
 mysqli_set_charset($mysql, 'utf8');
 $mysql->query("UPDATE `employers` SET `Name` = '$name' , `Surname` = '$surname',
                                         `Lastname` = '$lastname' , `Sex` = '$sex',
@@ -57,7 +57,7 @@ $mysql->query("UPDATE `employers` SET `Name` = '$name' , `Surname` = '$surname',
                                         `Meetday` = '$meetday' , `Testtime` = '$testtime',
                                         `Datevacantion` = '$datevacantion' , `Comment` = '$comment',
                                         `vk` = '$vk' , `instagram` = '$instagram',
-                                        `Work` = '$Work' , `EducatePlace` = '$EducatePlace'  WHERE `id` = '$id' ");
+                                        `Work` = '$work' , `EducatePlace` = '$educatePlace'  WHERE `id` = '$id' ");
 
 
 if($_FILES["resume"]["name"] != null){
@@ -68,5 +68,5 @@ $mysql->query("UPDATE `employers` SET `testWork` = '$testpdf' WHERE `id` = '$id'
 }
 
 $mysql->close();
-header('Location:/');
+header('Location:/pages/reduct.php?id='.$id);
 ?>
