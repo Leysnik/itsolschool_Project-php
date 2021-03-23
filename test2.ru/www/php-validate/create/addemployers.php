@@ -6,7 +6,6 @@ $surname = filter_var(trim($_POST['surname']), FILTER_SANITIZE_STRING);
 $lastname = filter_var(trim($_POST['lastname']), FILTER_SANITIZE_STRING);
 $birth = filter_var(trim($_POST['birth']), FILTER_SANITIZE_STRING);
 $sex = filter_var(trim($_POST['sex']), FILTER_SANITIZE_STRING);
-$education = filter_var(trim($_POST['education']), FILTER_SANITIZE_STRING);
 $city = filter_var(trim($_POST['city']), FILTER_SANITIZE_STRING);
 $tel = filter_var(trim($_POST['tel']), FILTER_SANITIZE_STRING);
 $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_STRING);
@@ -40,7 +39,7 @@ if(is_uploaded_file($_FILES["testpdf"]["tmp_name"]))
 require('../validate/connect.php');
 $mysql->query("INSERT INTO `employers` (`Name` , `Surname`,
                                         `Lastname` , `Sex`,
-                                        `Birth` , `Education`,
+                                        `Birth` ,
                                         `City` , `Tel`,
                                         `Email` , `Social`,
                                         `Meetday` , `Testtime`,
@@ -50,7 +49,7 @@ $mysql->query("INSERT INTO `employers` (`Name` , `Surname`,
                                         `Work` , `EducatePlace`, `pinned`)
 VALUES('$name','$surname',
        '$lastname','$sex',
-       '$birth','$education',
+       '$birth',
        '$city','$tel',
        '$email','$social',
        '$meetday','$testtime',

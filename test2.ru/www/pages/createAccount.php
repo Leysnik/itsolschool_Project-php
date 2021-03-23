@@ -6,7 +6,7 @@ if($_SESSION['grant'] == 0){header('Location:/');}
 <html lang="ru">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>БД</title>
+    <title>Пользователи</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../img/icon.png" type="image/png">
 </head>

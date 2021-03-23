@@ -14,7 +14,7 @@ if(!$mysql->query("SELECT * FROM `employers`"))
 $result = $mysql->query("SELECT * FROM `employers`");
 ?>
 
-<tr><th>ФИО</th><th>Пол</th><th>Дата рождения</th><th>Образование</th><th>Места учебы</th><th>Должность</th><th>Город</th><th>Телефон</th><th>Почта</th><th>Соц. сеть</th><th>Дата собеседования</th><th>Дата стажировки</th><th>Дата размещения вакансии</th><th>Комментарий</th><th>Файлы</th><th>Редактирование</th></tr>
+<tr><th>ФИО</th><th>Пол</th><th>Дата рождения</th><th>Образование</th><th>Должность</th><th>Город</th><th>Телефон</th><th>Почта</th><th>Соц. сеть</th><th>Дата собеседования</th><th>Дата стажировки</th><th>Дата размещения вакансии</th><th>Комментарий</th><th>Файлы</th><th>Редактирование</th></tr>
 <?php
 while ( $row = mysqli_fetch_assoc( $result ) ) {
 $birth = calculate_age($row['Birth']);
@@ -23,7 +23,6 @@ and ($row['Surname'] == $surname or $surname == '')
 and ($row['Lastname'] == $lastname or $lastname == '') 
 and (($birth >= $birth_min or $birth_min == '') and ($birth <= $birth_max or $birth_max == '')) 
 and ($row['Sex'] == $sex or $sex == '') 
-and ($row['Education'] == $education or $education == '') 
 and ($row['City'] == $city or $city == '') 
 and ($row['Tel'] == $tel or $tel == '') 
 and ($row['Email'] == $email or $email == '') 
@@ -48,10 +47,6 @@ and ($row['pinned'] == $pinned or $pinned == '')){
  </td><td class="Birth-table">
     <?php
     print_r( $row['Birth'] );
-    ?>
-</td><td class="Education-table">
-    <?php
-    print_r( $row['Education'] );
     ?>
 </td><td class="Place-table">
     <?php
@@ -121,7 +116,7 @@ and ($row['pinned'] == $pinned or $pinned == '')){
         </td><td id="rewrite" class="rewrite-table">
         <a target="_blank" class="direct alter-butt butt butt-table butt-table-1" href="../pages/reduct.php?id=<?php print_r($row['id']);?>" >Редактировать</a>
         <a id="fake-delete"  class="direct alter-butt butt butt-table butt-table-2 grey">Удалить</a>
-        <a id="delete"   class="direct alter-butt butt butt-table butt-table-2 disabled" href="../pages/delete.php?id=<?php print_r($row['id']);?>
+        <a target="_blank" id="delete"   class="direct alter-butt butt butt-table butt-table-2 disabled" href="../pages/delete.php?id=<?php print_r($row['id']);?>
         ">Удалить</a>
         <a  id="still-delete"  class="disabled alter-butt butt butt-table butt-table-3 " >Скрыть</a>
     </td>

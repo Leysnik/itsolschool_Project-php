@@ -7,7 +7,6 @@ $surname = filter_var(trim($_POST['surname']), FILTER_SANITIZE_STRING);
 $lastname = filter_var(trim($_POST['lastname']), FILTER_SANITIZE_STRING);
 $birth = filter_var(trim($_POST['birth']), FILTER_SANITIZE_STRING);
 $sex = filter_var(trim($_POST['sex']), FILTER_SANITIZE_STRING);
-$education = filter_var(trim($_POST['education']), FILTER_SANITIZE_STRING);
 $city = filter_var(trim($_POST['city']), FILTER_SANITIZE_STRING);
 $tel = filter_var(trim($_POST['tel']), FILTER_SANITIZE_STRING);
 $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_STRING);
@@ -49,7 +48,7 @@ require('../validate/connect.php');
 
 $mysql->query("UPDATE `employers` SET `Name` = '$name' , `Surname` = '$surname',
                                         `Lastname` = '$lastname' , `Sex` = '$sex',
-                                        `Birth` = '$birth' , `Education` = '$education',
+                                        `Birth` = '$birth' ,
                                         `City` = '$city' , `Tel` = '$tel',
                                         `Email` = '$email' , `Social` = '$social',
                                         `Meetday` = '$meetday' , `Testtime` = '$testtime',

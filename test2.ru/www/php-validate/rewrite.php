@@ -1,11 +1,3 @@
-<?php
-$id = $_GET[ 'id' ];
- require('validate/connect.php');
-if(!$mysql->query("SELECT * FROM `employers`"))
-     echo $mysql->error;
-$result = $mysql->query("SELECT * FROM `employers` WHERE id = '$id'");
-$row = mysqli_fetch_assoc( $result);
-?>
 <section class="flex-container">
     <h1 id="main">Редактировать резюме</h1>
 <form action="../php-validate/create/rewriteemployers.php" method="post" enctype="multipart/form-data" class="flex-container">
@@ -48,21 +40,10 @@ $row = mysqli_fetch_assoc( $result);
             </div>
 
         <div class="flex-container row">
-        <div class="flex-container sex">
-        <label >Образование</label>
-    <select required placeholder="Образование" name="education" class="text-field_prof text-select">
-        <option class="disable"><?php print_r($row['Education']);?></option>
-    <option >Начальное образование</option>
-    <option >Среднее общее образование</option>
-    <option >Среднее полное образование</option> 
-    <option >Среднее профессиональное образование</option>
-    <option >Бакалавриат высшего образования</option> 
-    <option >Магистратура</option> 
-    </select>
-                    </div>
+
     <div class="flex-container">
-        <label >Места обучения</label>
-    <textarea name="educatePlace" class="text-field_prof" value="" placeholder="Места обучения" required><?php print_r($row['EducatePlace']);?></textarea>
+        <label >Образование</label>
+    <textarea name="educatePlace" class="text-field_prof" value="" placeholder="Образование" required><?php print_r($row['EducatePlace']);?></textarea>
     </div>
           
         <div class="flex-container">

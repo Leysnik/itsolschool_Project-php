@@ -5,7 +5,6 @@ $lastname = $_GET['lastname'];
 $birth_min = $_GET['birth_min'];
 $birth_max = $_GET['birth_max'];
 $sex = $_GET['sex'];
-$education = $_GET['education'];
 $city = $_GET['city'];
 $tel = $_GET['tel'];
 $email = $_GET['email'];
@@ -62,20 +61,7 @@ $pinned = $_GET['pinned'];
                     </div>
             </div>
 
-        <div class="flex-container row">
-        <div class="flex-container sex">
-        <label >Образование</label>
-    <select  placeholder="Образование" name="education" class="text-field_prof text-select">
-        <option class="disable"><?php echo $education;?></option>
-    <option >Начальное образование</option>
-    <option >Среднее общее образование</option>
-    <option >Среднее полное образование</option> 
-    <option >Среднее профессиональное образование</option>
-    <option >Бакалавриат высшего образования</option> 
-    <option >Магистратура</option> 
-    </select>
-                    </div>
-          
+        <div class="flex-container row">          
         <div class="flex-container">
         <label >Должность</label>
     <input type="text" name="work" class="text-field_prof correct-t" value="<?php echo $work;?>" placeholder="Должность" >
