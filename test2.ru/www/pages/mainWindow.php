@@ -8,6 +8,6 @@
    <?php 
     if($_SESSION['grant']):
     ?>
-    <span class="butt step2-butt"><a class="direct" href="pages/createAccount.php">Создать аккаунт сотрудника</a></span>
+    <span class="butt step2-butt"><a class="direct" href="pages/createAccount.php">Пользователи</a></span>
     <?php endif; ?>
 </section>
