@@ -49,9 +49,11 @@ $pinned = $_GET['pinned'];
                     </div>
     <div class="flex-container">
         <label >Дата рождения</label>
-    <input type="text" name="birth_min" class="text-field_prof" value="<?php echo $birth_min;?>" placeholder="Дата рождения" >
-        <input type="text" name="birth_max" class="text-field_prof" value="<?php echo $birth_max;?>" placeholder="Дата рождения" >
+        <div>
+    <input type="number" name="birth_min" class="text-field_prof number" value="<?php echo $birth_min;?>" placeholder="min" min="1" >-
+        <input type="number" name="birth_max" class="text-field_prof number" value="<?php echo $birth_max;?>" placeholder="max" min="1" >
     </div>
+        </div>
           
  
 

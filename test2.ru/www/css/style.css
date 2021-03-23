@@ -313,6 +313,8 @@ background-color:rgba(247, 166, 37,0.8);
 .center {
 text-align:center;
 }
-
+.number {
+max-width:40px !important;
+}
 
 
