@@ -20,9 +20,7 @@ $vk = filter_var(trim($_POST['vk']), FILTER_SANITIZE_STRING);
 $instagram = filter_var(trim($_POST['instagram']), FILTER_SANITIZE_STRING);
 $work = filter_var(trim($_POST['work']), FILTER_SANITIZE_STRING);
 $educatePlace = filter_var(trim($_POST['educatePlace']), FILTER_SANITIZE_STRING);
-
-
-
+$pinned = filter_var(trim($_POST['pinned']), FILTER_SANITIZE_STRING);
 
 if($_FILES["resume"]["name"] != null){
 $resume = $_FILES["resume"]["size"].'-'.$_FILES["resume"]["name"];
@@ -57,7 +55,7 @@ $mysql->query("UPDATE `employers` SET `Name` = '$name' , `Surname` = '$surname',
                                         `Meetday` = '$meetday' , `Testtime` = '$testtime',
                                         `Datevacantion` = '$datevacantion' , `Comment` = '$comment',
                                         `vk` = '$vk' , `instagram` = '$instagram',
-                                        `Work` = '$work' , `EducatePlace` = '$educatePlace'  WHERE `id` = '$id' ");
+                                        `Work` = '$work' , `EducatePlace` = '$educatePlace', `pinned` = '$pinned'  WHERE `id` = '$id' ");
 
 
 if($_FILES["resume"]["name"] != null){

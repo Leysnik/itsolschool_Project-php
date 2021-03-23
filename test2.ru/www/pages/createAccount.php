@@ -27,7 +27,7 @@ require('../php-validate/validate/session.php');
                 ?>
                 <span class="red">Такой пользователь уже имеется</span>
                                 <?php endif; ?>
-                <div class="form-item butt-container"><input class="step-butt butt" type="submit" value="Войти"></div>
+                <div class="form-item butt-container"><input class="step-butt butt" type="submit" value="Создать"></div>
             </form>
         </section>
         </main>

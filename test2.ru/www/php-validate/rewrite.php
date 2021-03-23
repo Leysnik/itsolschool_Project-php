@@ -29,7 +29,7 @@ $row = mysqli_fetch_assoc( $result);
         <div class="flex-container sex">
         <label >Пол</label>
     <select required placeholder="Пол" name="sex" class="text-field_prof text-select">
-    <option ><?php print_r($row['Sex']);?></option>
+    <option class="disable" ><?php print_r($row['Sex']);?></option>
     <option >Мужской</option>
     <option >Женский</option> 
     </select>
@@ -51,7 +51,7 @@ $row = mysqli_fetch_assoc( $result);
         <div class="flex-container sex">
         <label >Образование</label>
     <select required placeholder="Образование" name="education" class="text-field_prof text-select">
-        <option><?php print_r($row['Education']);?></option>
+        <option class="disable"><?php print_r($row['Education']);?></option>
     <option >Начальное образование</option>
     <option >Среднее общее образование</option>
     <option >Среднее полное образование</option> 
@@ -142,7 +142,10 @@ $row = mysqli_fetch_assoc( $result);
         <label >Комментарий</label>
     <textarea type="text" name="comment" class="text-field_prof" value="" placeholder="Комментарий"><?php print_r($row['Comment']);?></textarea>
             </div>
- 
-    <input id="create" type="submit" class="alter-butt butt position-r" value="Создать" >
+         <div class="position-r-2">
+        <label for="pinned">В избранное</label>
+        <input id="pinned" type="checkbox" name="pinned" value="1"<?php if($row['pinned'] == 1){echo 'checked';}?>>
+        </div>
+    <input id="create" type="submit" class="alter-butt butt position-r" value="Обновить" >
 </form>
 </section>

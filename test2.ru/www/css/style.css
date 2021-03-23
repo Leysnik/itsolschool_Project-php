@@ -110,6 +110,25 @@ position:fixed;
 bottom:30px;
 right:20px;
 }
+.position-r-2 {
+    border-radius: 10px;
+    padding: 3px;
+    border: solid 2px blueviolet;
+    color: blueviolet;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+}
+.pinned-container {
+    margin-top:10px;
+    border-radius: 10px;
+    padding: 3px;
+    border: solid 2px blueviolet;
+    color: blueviolet;
+}
+.pinned {
+    font-size: 18px;
+}
 .send-field_prof {
     text-align: center;
     height: 30px;
@@ -268,6 +287,10 @@ right:10px;
     .exit:visited {
         color: rgba(245, 12, 12,0.4);
     }
+.decor {
+text-decoration:none;
+background-color:rgba(247, 166, 37,0.8);
+}
 
 
 

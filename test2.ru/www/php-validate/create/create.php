@@ -69,12 +69,12 @@
         <div class="flex-container">
         <label >Телефон</label>
     <input type="tel" name="tel" id="tel" class="text-field_prof" value="" placeholder="Телефон" required>
-            <div id="tel-d" class="red disable">Такой телефон уже есть в базе</div>
+            <div id="tel-d" class="red disable">Предупреждение:<br>Такой телефон уже есть в базе</div>
                     </div>
         <div class="flex-container">
         <label >Email</label>
     <input type="email" id="email" name="email" class="text-field_prof" value="" placeholder="Email">
-        <div class="red disable" id="email-d">Такая почта уже есть в базе</div>            
+        <div class="red disable" id="email-d">Предупреждение:<br>Такая почта уже есть в базе</div>            
         </div>
       </div>
 
@@ -108,17 +108,17 @@
         <div class="flex-container">
         <label >VK</label>
     <input type="text" name="vk" id="vk"  class="text-field_prof" value="" placeholder="Вконтакте">
-            <div id="vk-d" class="red disable">Такой аккаунт уже есть в базе</div>
+            <div id="vk-d" class="red disable">Предупреждение:<br>Такая соц. сеть уже есть в базе</div>
                     </div>
         <div class="flex-container">
         <label >INSTAGRAM</label>
     <input type="text" name="instagram" id="instagram" class="text-field_prof" value="" placeholder="Инстаграм">
-        <div id="instagram-d" class="red disable">Такой аккаунт уже есть в базе</div>            
+        <div id="instagram-d" class="red disable">Предупреждение:<br>Такая соц. сеть уже есть в базе</div>            
         </div>
         <div class="flex-container">
         <label >Дополнительная соц. сеть</label>
     <input type="text" name="social" id="social" class="text-field_prof" value="" placeholder="Дополнительная соц. сеть">  
-        <div id="social-d" class="red disable">Такой аккаунт уже есть в базе</div>            
+        <div id="social-d" class="red disable">Предупреждение:<br>Такая соц. сеть уже есть в базе</div>            
         </div>
       </div>
 
@@ -139,8 +139,14 @@
         <label >Комментарий</label>
     <textarea type="text" name="comment" class="text-field_prof" value="" placeholder="Комментарий"></textarea>
             </div>
-    <input id="next" type="button"  class="alter-butt butt position-r" value="Дальше">
-    <input id="create" type="submit" class="alter-butt butt position-r disable" value="Создать" >
+        <div class="position-r-2">
+        <label for="pinned">В избранное</label>
+        <input id="pinned" type="checkbox" name="pinned" value="1">
+        </div>
+    <div class="position-r">
+    <input id="next" type="button"  class="alter-butt butt" value="Дальше">
+    <input id="create" type="submit" class="alter-butt butt disable" value="Создать" >
+        </div>
 </form>
 
 </section>

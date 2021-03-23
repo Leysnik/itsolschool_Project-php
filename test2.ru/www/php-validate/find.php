@@ -1,25 +1,14 @@
  <?php
+ function calculate_age($birthday) {
+$birthday_timestamp = strtotime($birthday);
+$age = date('Y') - date('Y', $birthday_timestamp);
+return $age;
+}
  if(!empty($_GET)){
 echo '<section class="table">';
 echo '<table>';
-$name = $_GET['name'];
-$surname = $_GET['surname'];
-$lastname = $_GET['lastname'];
-$birth = $_GET['birth'];
-$sex = $_GET['sex'];
-$education = $_GET['education'];
-$city = $_GET['city'];
-$tel = $_GET['tel'];
-$email = $_GET['email'];
-$social = $_GET['social'];
-$meetday = $_GET['meetday'];
-$testtime = $_GET['testtime'];
-$datevacantion = $_GET['datevacantion'];
-$vk = $_GET['vk'];
-$instagram = $_GET['instagram'];
-$work = $_GET['work'];
 
- require('validate/connect.php');
+require('validate/connect.php');
 if(!$mysql->query("SELECT * FROM `employers`"))
      echo $mysql->error;
 $result = $mysql->query("SELECT * FROM `employers`");
@@ -28,8 +17,22 @@ $result = $mysql->query("SELECT * FROM `employers`");
 <tr><th>ФИО</th><th>Пол</th><th>Дата рождения</th><th>Образование</th><th>Места учебы</th><th>Должность</th><th>Город</th><th>Телефон</th><th>Почта</th><th>Соц. сеть</th><th>Дата собеседования</th><th>Дата стажировки</th><th>Дата размещения вакансии</th><th>Комментарий</th><th>Файлы</th><th>Редактирование</th></tr>
 <?php
 while ( $row = mysqli_fetch_assoc( $result ) ) {
-if(($row['Name'] == $name or $name == '') and ($row['Surname'] == $surname or $surname == '') and ($row['Lastname'] == $lastname or $lastname == '') and ($row['Birth'] == $birth or $birth == '') and ($row['Sex'] == $sex or $sex == '') and ($row['Education'] == $education or $education == '') and ($row['City'] == $city or $city == '') and ($row['Tel'] == $tel or $tel == '') and ($row['Email'] == $email or $email == '') and ($row['Social'] == $social or $social == '') and ($row['VK'] == $vk or $vk == '') and ($row['Instagram'] == $instagram or $instagram == '') and ($row['Work'] == $work or $work == '') and ($row['Meetday'] == $meetday or $meetday == '') and ($row['Testtime'] == $testtime or $testtime == '') and ($row['Datevacantion'] == $datevacantion or $datevacantion == '')){
- ?>
+$birth = calculate_age($row['Birth']);
+if(($row['Name'] == $name or $name == '') 
+and ($row['Surname'] == $surname or $surname == '') 
+and ($row['Lastname'] == $lastname or $lastname == '') 
+and (($birth >= $birth_min or $birth_min == '') and ($birth <= $birth_max or $birth_max == '')) 
+and ($row['Sex'] == $sex or $sex == '') 
+and ($row['Education'] == $education or $education == '') 
+and ($row['City'] == $city or $city == '') 
+and ($row['Tel'] == $tel or $tel == '') 
+and ($row['Email'] == $email or $email == '') 
+and ($row['Social'] == $social or $social == '') 
+and ($row['VK'] == $vk or $vk == '') 
+and ($row['Instagram'] == $instagram or $instagram == '') 
+and ($row['Work'] == $work or $work == '') 
+and ($row['pinned'] == $pinned or $pinned == '')){
+?>
 <tr><td class="Name-table">
     <?php
     print_r( $row['Surname']);
