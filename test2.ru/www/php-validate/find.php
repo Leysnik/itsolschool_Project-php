@@ -32,7 +32,7 @@ and ($row['Instagram'] == $instagram or $instagram == '')
 and ($row['Work'] == $work or $work == '') 
 and ($row['pinned'] == $pinned or $pinned == '')){
 ?>
-<tr><td class="Name-table">
+<tr id="<?php print_r($row['id']); ?>"><td class="Name-table">
     <?php
     print_r( $row['Surname']);
     echo ' ';
@@ -116,8 +116,7 @@ and ($row['pinned'] == $pinned or $pinned == '')){
         </td><td id="rewrite" class="rewrite-table">
         <a target="_blank" class="direct alter-butt butt butt-table butt-table-1" href="../pages/reduct.php?id=<?php print_r($row['id']);?>" >Редактировать</a>
         <a id="fake-delete"  class="direct alter-butt butt butt-table butt-table-2 grey">Удалить</a>
-        <a target="_blank" id="delete"   class="direct alter-butt butt butt-table butt-table-2 disabled" href="../pages/delete.php?id=<?php print_r($row['id']);?>
-        ">Удалить</a>
+        <a id="del" idb="<?php print_r($row['id']); ?>"   class="direct alter-butt butt butt-table butt-table-2 disabled butt-del">Удалить</a>
         <a  id="still-delete"  class="disabled alter-butt butt butt-table butt-table-3 " >Скрыть</a>
     </td>
  

@@ -65,5 +65,5 @@ $mysql->query("UPDATE `employers` SET `testWork` = '$testpdf' WHERE `id` = '$id'
 }
 
 $mysql->close();
-header('Location:/pages/reduct.php?id='.$id);
+header('Location:/pages/reduct.php?id='.$id.'&rewrite=1');
 ?>

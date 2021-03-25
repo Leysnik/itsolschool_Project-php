@@ -58,5 +58,5 @@ VALUES('$name','$surname',
        '$vk','$instagram',
        '$work','$educatePlace', '$pinned') ");
 $mysql->close();
-header('Location:/');
+header('Location:/pages/createPage.php'.'?create=1');
 ?>

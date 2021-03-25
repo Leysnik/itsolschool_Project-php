@@ -18,7 +18,10 @@ if($_SESSION['grant'] == 0){header('Location:/');}
         <section class="flex-container">
             <form action="../php-validate/validate/check.php" method="post">
                 <div><h2  class="reg"><label>Пользователи</label></h2></div>
-                <input name="name"  class="text-field-2" type="text" placeholder="ФИО" required>
+                <input name="name"  class="text-field-2" type="text" placeholder="Фамилия" required>
+                <input name="surname"  class="text-field-2" type="text" placeholder="Имя" required>
+                <input name="lastname"  class="text-field-2" type="text" placeholder="Отчество">
+                <br>
                 <input name="login"  class="text-field-2" type="text" placeholder="Логин" required>
                
                 <input name="pass" id="pass" class="text-field-2" type="password" placeholder="Пароль" required>
@@ -39,7 +42,7 @@ if($_SESSION['grant'] == 0){header('Location:/');}
                 while ( $row = mysqli_fetch_assoc( $result ) ) {
                 if($row['Grant'] != 1){
                     echo '<tr><td>';
-                    print_r($row['Name']);
+                    print_r($row['Name'].' '.$row['Surname'].' '.$row['Lastname']);
                     echo '</td>';
                     echo '<td>';
                     print_r($row['Login']);

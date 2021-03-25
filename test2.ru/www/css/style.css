@@ -44,7 +44,8 @@ margin-top:170px;
     width: 300px;
     color:white;
     font-size:24px;
-    border-radius:5px;    
+    border-radius:5px;  
+    cursor:pointer;
 }
 .step-butt {
     border: 0px;
@@ -315,6 +316,10 @@ text-align:center;
 }
 .number {
 max-width:40px !important;
+}
+.textarea {
+max-width:200px;
+max-height:70px;
 }
 
 

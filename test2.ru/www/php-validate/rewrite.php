@@ -1,20 +1,21 @@
 <section class="flex-container">
     <h1 id="main">Редактировать резюме</h1>
+    <?php if($_GET['rewrite'] == 1){echo '<h2>Обновлено</h2>';}?>
 <form action="../php-validate/create/rewriteemployers.php" method="post" enctype="multipart/form-data" class="flex-container">
     <input type="text" name="id" class="text-field_prof disabled" value="<?php echo $id;?>" >
     <div class="flex-container-2">
     <div class="flex-container row">
     <div class="flex-container">
         <label >Имя</label>
-    <input type="text" name="name" class="text-field_prof" value="<?php print_r($row['Name']);?>" placeholder="Имя" required>
+    <input type="text" name="name" class="text-field_prof" value="<?php print_r($row['Name']);?>" placeholder="Иван" required>
         </div>
         <div class="flex-container">
         <label >Фамилия</label>
-    <input type="text" name="surname" class="text-field_prof" value="<?php print_r($row['Surname']);?>" placeholder="Фамилия" required>
+    <input type="text" name="surname" class="text-field_prof" value="<?php print_r($row['Surname']);?>" placeholder="Иванов" required>
                     </div>
         <div class="flex-container">
         <label >Отчество(при наличии)</label>
-    <input type="text" name="lastname" class="text-field_prof" value="<?php print_r($row['Lastname']);?>" placeholder="Отчество(при наличии)">
+    <input type="text" name="lastname" class="text-field_prof" value="<?php print_r($row['Lastname']);?>" placeholder="Иванович">
             </div>
         </div>
         <div class="flex-container row">
@@ -35,7 +36,7 @@
 
         <div class="flex-container">
         <label >Город</label>
-    <input type="text" name="city" class="text-field_prof" value="<?php print_r($row['City']);?>" placeholder="Город" required>
+    <input type="text" name="city" class="text-field_prof" value="<?php print_r($row['City']);?>" placeholder="Самара" required>
                     </div>
             </div>
 
@@ -43,12 +44,12 @@
 
     <div class="flex-container">
         <label >Образование</label>
-    <textarea name="educatePlace" class="text-field_prof" value="" placeholder="Образование" required><?php print_r($row['EducatePlace']);?></textarea>
+    <textarea name="educatePlace" class="textarea text-field_prof" value="" placeholder="Образование" required><?php print_r($row['EducatePlace']);?></textarea>
     </div>
           
         <div class="flex-container">
         <label >Должность</label>
-    <input type="text" name="work" class="text-field_prof correct-t" value="<?php print_r($row['Work']);?>" placeholder="Должность" >
+    <input type="text" name="work" class="text-field_prof correct-t" value="<?php print_r($row['Work']);?>" placeholder="Дизайнер" >
                     </div>
 
             </div>
@@ -57,11 +58,11 @@
         <div class="flex-container row">
         <div class="flex-container">
         <label >Телефон</label>
-    <input type="tel" name="tel" id="tel" class="text-field_prof" value="<?php print_r($row['Tel']);?>" placeholder="Телефон" required>
+    <input type="tel" name="tel" id="tel" class="text-field_prof" value="<?php print_r($row['Tel']);?>" placeholder="88005553535" required>
                     </div>
         <div class="flex-container">
         <label >Email</label>
-    <input type="email" id="email" name="email" class="text-field_prof" value="<?php print_r($row['Email']);?>" placeholder="Email">
+    <input type="email" id="email" name="email" class="text-field_prof" value="<?php print_r($row['Email']);?>" placeholder="anton_pk@gmail.com">
                     </div>
       </div>
 
@@ -94,15 +95,15 @@
     <div class="flex-container-2">
         <div class="flex-container">
         <label >VK</label>
-    <input type="text" name="vk"  class="text-field_prof" value="<?php print_r($row['VK']);?>" placeholder="Вконтакте">
+    <input type="text" name="vk"  class="text-field_prof" value="<?php print_r($row['VK']);?>" placeholder="https://vk.com/xxxx">
                     </div>
         <div class="flex-container">
         <label >INSTAGRAM</label>
-    <input type="text" name="instagram" class="text-field_prof" value="<?php print_r($row['Instagram']);?>" placeholder="Инстаграм">
+    <input type="text" name="instagram" class="text-field_prof" value="<?php print_r($row['Instagram']);?>" placeholder="https://www.instagram.com/xxxxx">
                     </div>
         <div class="flex-container">
-        <label >Дополнительная соц. сеть</label>
-    <input type="text" name="social" class="text-field_prof" value="<?php print_r($row['Social']);?>" placeholder="Дополнительная соц. сеть">  
+        <label >HeadHunter</label>
+    <input type="text" name="social" class="text-field_prof" value="<?php print_r($row['Social']);?>" placeholder="https://hh.ru/vacancy/xxxxx">  
                     </div>
       </div>
 
@@ -121,7 +122,7 @@
    
         <div class="flex-container">
         <label >Комментарий</label>
-    <textarea type="text" name="comment" class="text-field_prof" value="" placeholder="Комментарий"><?php print_r($row['Comment']);?></textarea>
+    <textarea  type="text" name="comment" class="textarea text-field_prof" value="" placeholder="Комментарий о претенденте"><?php print_r($row['Comment']);?></textarea>
             </div>
          <div class="position-r-2">
         <label for="pinned">В избранное</label>
