@@ -22,15 +22,15 @@ $pinned = $_GET['pinned'];
     <div class="flex-container row">
     <div class="flex-container">
         <label >Имя</label>
-    <input type="text" name="name" class="text-field_prof" value="<?php echo $name;?>" placeholder="Иван" >
+    <input type="text" name="name" class="text-field_prof" value="<?php echo $name;?>">
         </div>
         <div class="flex-container">
         <label >Фамилия</label>
-    <input type="text" name="surname" class="text-field_prof" value="<?php echo $surname;?>" placeholder="Иванов">
+    <input type="text" name="surname" class="text-field_prof" value="<?php echo $surname;?>" >
                     </div>
         <div class="flex-container">
         <label >Отчество(при наличии)</label>
-    <input type="text" name="lastname" class="text-field_prof" value="<?php echo $lastname;?>" placeholder="Иванович">
+    <input type="text" name="lastname" class="text-field_prof" value="<?php echo $lastname;?>" >
             </div>
         </div>
         <div class="flex-container row">
@@ -45,8 +45,8 @@ $pinned = $_GET['pinned'];
     <div class="flex-container">
         <label >Возраст</label>
         <div>
-    <input type="number" name="birth_min" class="text-field_prof number" value="<?php echo $birth_min;?>" placeholder="min" min="18" >-
-        <input type="number" name="birth_max" class="text-field_prof number" value="<?php echo $birth_max;?>" placeholder="max" min="18" >
+    <input type="number" name="birth_min" class="text-field_prof number" value="<?php echo $birth_min;?>" placeholder="min" min="16" >-
+        <input type="number" name="birth_max" class="text-field_prof number" value="<?php echo $birth_max;?>" placeholder="max" min="16" >
     </div>
         </div>
           
@@ -54,14 +54,14 @@ $pinned = $_GET['pinned'];
 
         <div class="flex-container">
         <label >Город</label>
-    <input type="text" name="city" class="text-field_prof" value="<?php echo $city;?>" placeholder="Самара" >
+    <input type="text" name="city" class="text-field_prof" value="<?php echo $city;?>"  >
                     </div>
             </div>
 
         <div class="flex-container row">          
         <div class="flex-container">
         <label >Должность</label>
-    <input type="text" name="work" class="text-field_prof correct-t" value="<?php echo $work;?>" placeholder="Дизайнер" >
+    <input type="text" name="work" class="text-field_prof correct-t" value="<?php echo $work;?>" >
                     </div>
 
             </div>
@@ -70,11 +70,11 @@ $pinned = $_GET['pinned'];
         <div class="flex-container row">
         <div class="flex-container">
         <label >Телефон</label>
-    <input type="tel" name="tel" id="tel" class="text-field_prof" value="<?php echo $tel;?>" placeholder="88005553535" >
+    <input type="tel" name="tel" id="tel" class="text-field_prof" value="<?php echo $tel;?>"  >
                     </div>
         <div class="flex-container">
         <label >Email</label>
-    <input type="email" id="email" name="email" class="text-field_prof" value="<?php echo $email;?>" placeholder="anton_pk@gmail.com">
+    <input type="email" id="email" name="email" class="text-field_prof" value="<?php echo $email;?>" >
                     </div>
       </div>
       </div>
@@ -83,15 +83,15 @@ $pinned = $_GET['pinned'];
     <div class="flex-container-2">
         <div class="flex-container">
         <label >VK</label>
-    <input type="text" name="vk"  class="text-field_prof" value="<?php echo $vk;?>" placeholder="https://vk.com/xxxx">
+    <input type="text" name="vk"  class="text-field_prof" value="<?php echo $vk;?>" >
                     </div>
         <div class="flex-container">
         <label >INSTAGRAM</label>
-    <input type="text" name="instagram" class="text-field_prof" value="<?php echo $instagram;?>" placeholder="https://www.instagram.com/xxxxx">
+    <input type="text" name="instagram" class="text-field_prof" value="<?php echo $instagram;?>" >
                     </div>
         <div class="flex-container">
         <label >HeadHunter</label>
-    <input type="text" name="social" class="text-field_prof" value="<?php echo $social;?>" placeholder="https://hh.ru/vacancy/xxxxx">  
+    <input type="text" name="social" class="text-field_prof" value="<?php echo $social;?>" >  
                     </div>
       </div>
             <div class="flex-container-2 pinned-container">

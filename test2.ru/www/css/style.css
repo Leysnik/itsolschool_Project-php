@@ -319,7 +319,12 @@ max-width:40px !important;
 }
 .textarea {
 max-width:200px;
-max-height:70px;
+max-height:700px;
+}
+.d-img {
+    max-width:30px;
+    max-height:30px;
+    margin-right:10px;
 }
 
 

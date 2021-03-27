@@ -1,9 +1,11 @@
  <?php
- function calculate_age($birthday) {
-$birthday_timestamp = strtotime($birthday);
-$age = date('Y') - date('Y', $birthday_timestamp);
-return $age;
+
+function calculate_age($birthdayDate) {
+            $datetime = new DateTime($birthdayDate);
+            $interval = $datetime->diff(new DateTime(date("Y-m-d")));
+            return $interval->format("%Y");
 }
+
  if(!empty($_GET)){
 echo '<section class="table">';
 echo '<table>';
