@@ -1,5 +1,18 @@
  <?php
-
+ $name = $_GET['name'];
+$surname = $_GET['surname'];
+$lastname = $_GET['lastname'];
+$birth_min = $_GET['birth_min'];
+$birth_max = $_GET['birth_max'];
+$sex = $_GET['sex'];
+$city = $_GET['city'];
+$tel = $_GET['tel'];
+$email = $_GET['email'];
+$social = $_GET['social'];
+$vk = $_GET['vk'];
+$instagram = $_GET['instagram'];
+$work = $_GET['work'];
+$pinned = $_GET['pinned'];
 function calculate_age($birthdayDate) {
             $datetime = new DateTime($birthdayDate);
             $interval = $datetime->diff(new DateTime(date("Y-m-d")));
@@ -14,10 +27,10 @@ require('validate/connect.php');
 if(!$mysql->query("SELECT * FROM `employers`"))
      echo $mysql->error;
 $result = $mysql->query("SELECT * FROM `employers`");
-?>
-
-<tr><th>ФИО</th><th>Пол</th><th>Дата рождения</th><th>Образование</th><th>Должность</th><th>Город</th><th>Телефон</th><th>Почта</th><th>Соц. сеть</th><th>Дата собеседования</th><th>Дата стажировки</th><th>Дата размещения вакансии</th><th>Комментарий</th><th>Файлы</th><th>Редактирование</th></tr>
-<?php
+$number = 0;
+if($_GET['number'] != ''){
+$i = $_GET['number'];
+}
 while ( $row = mysqli_fetch_assoc( $result ) ) {
 $birth = calculate_age($row['Birth']);
 if(($row['Name'] == $name or $name == '') 
@@ -33,7 +46,10 @@ and ($row['VK'] == $vk or $vk == '')
 and ($row['Instagram'] == $instagram or $instagram == '') 
 and ($row['Work'] == $work or $work == '') 
 and ($row['pinned'] == $pinned or $pinned == '')){
+if($number == 0){echo '<tr><th>ФИО</th><th>Пол</th><th>Дата рождения</th><th>Образование</th><th>Должность</th><th>Город</th><th>Телефон</th><th>Почта</th><th>Соц. сеть</th><th>Дата собеседования</th><th>Дата стажировки</th><th>Дата размещения вакансии</th><th>Комментарий</th><th>Файлы</th><th>Редактирование</th></tr>';}
+if($number >= ($page-1)*5 and $number <= $page*5-1){
 ?>
+
 <tr id="<?php print_r($row['id']); ?>"><td class="Name-table">
     <?php
     print_r( $row['Surname']);
@@ -97,7 +113,9 @@ and ($row['pinned'] == $pinned or $pinned == '')){
     ?>
 </td><td class="Test-table">
     <?php
+    if($row['Testtime'] != '0000-00-00'){
     print_r( $row['Testtime'] );
+    }
     ?>
  </td><td class="Date-table">
     <?php
@@ -124,12 +142,20 @@ and ($row['pinned'] == $pinned or $pinned == '')){
  
 </tr>
 <?php
+
+}
+$number++; 
+}
  }
- }
+ if($number == 0){echo '<h2 class="red">Записей с данными параметрами не существует</h2>';}
 $mysql->close();
 
+echo '</section>';
+$pages = ceil(($number+5)/5);
 
 echo '</table>';
-echo '</section>';
+for($i = 1; $i<$pages;$i++){
+echo '<a class="pagin alter-butt butt" href="findPage.php?'.$all.'&page='.$i.'">'.$i.'</a>';
+}
 }
  ?>

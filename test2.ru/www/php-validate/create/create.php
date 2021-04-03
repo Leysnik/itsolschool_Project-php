@@ -28,7 +28,7 @@
                     </div>
     <div class="flex-container">
         <label >Дата рождения<span class="red">*</span></label>
-    <input type="date" name="birth" class="text-field_prof" value="" required>
+    <input type="date" name="birth" class="text-field_prof" value="" min="<?php print_r(date('Y')-100);?>-01-01" max="<?php print_r(date('Y')-16);?>-01-01" required>
     </div>
           
  
@@ -48,7 +48,18 @@
           
         <div class="flex-container">
         <label >Должность</label>
-    <input type="text" name="work" class="text-field_prof correct-t" value=""  >
+    <select type="text" name="work" class="text-field_prof correct-t text-select" value=""  >
+        <option></option>
+        <?php 
+                        require('../php-validate/validate/connect.php');
+                $result = $mysql->query("SELECT * FROM `work`");
+                while ( $row = mysqli_fetch_assoc( $result ) ) {
+        echo '<option>';
+        print_r($row['Work']);
+        echo '</option>';
+        }
+        ?>
+    </select>
                     </div>
 
             </div>
@@ -77,17 +88,17 @@
   
     <div class="flex-container correct-t ">
         <label >Дата собеседования<span class="red">*</span></label>
-    <input type="date" id="meetday" name="meetday" class="date" value=""  required>
+    <input type="date" id="meetday" name="meetday" class="date" value="" min="<?php print_r(date('Y')-20);?>-01-01" max="<?php print_r(date('Y-m-d'));?>"  required>
     </div>
     
     <div class="flex-container correct-t ">
         <label>Дата стажировки</label>
       
-    <input type="date" id="testtime" name="testtime" class="date" value="" >
+    <input type="date" id="testtime" name="testtime" class="date" value="" min="<?php print_r(date('Y')-20);?>-01-01" max="<?php print_r(date('Y-m-d'));?>" >
     </div>
     <div class="flex-container correct-t ">
         <label>Дата размещения вакансии<span class="red">*</span></label>
-    <input type="date" id="datevacantion" name="datevacantion" class="date" value="" >
+    <input type="date" id="datevacantion" name="datevacantion" class="date" value="" min="<?php print_r(date('Y')-20);?>-01-01" max="<?php print_r(date('Y-m-d'));?>" required >
     </div >
             </div>
       </div>
@@ -130,7 +141,7 @@
    
         <div class="flex-container">
         <label >Комментарий</label>
-    <textarea type="text" name="comment" class="textarea text-field_prof" value="" ></textarea>
+    <textarea type="text" name="comment" class="textarea text-field_prof width" value="" ></textarea>
             </div>
         <div class="position-r-2">
         <label for="pinned">В избранное</label>

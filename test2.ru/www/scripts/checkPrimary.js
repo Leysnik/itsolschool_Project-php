@@ -40,6 +40,12 @@ function CreateRequest()
     return Request;
 } 
 
+function ValidPhone(phone) {
+    const regex = /(\d?)(\d{3})(\d{3})(\d{2})(\d{2})/g;
+    const subst = "+7($2) $3-$4-$5";
+    return phone.replace(regex, subst);
+} 
+
 email.oninput = function () {
     Request = new CreateRequest();
     const url = "../php-validate/checkPrimary.php";
@@ -69,6 +75,10 @@ tel.oninput = function () {
             if (Request.responseText == '1') { tel_d.classList.remove("disable"); } else { tel_d.classList.add("disable"); }
         }
     });
+};
+
+tel.oninput = function () {
+    tel.value = ValidPhone(tel.value);
 };
 
 vk.oninput = function () {

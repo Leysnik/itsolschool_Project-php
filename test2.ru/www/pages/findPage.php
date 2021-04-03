@@ -24,5 +24,6 @@ require('../php-validate/validate/session.php');
 
         </main>
   <script src="../scripts/checkNew-del.js"></script>
+    <script src="../scripts/plusMore.js"></script>
 </body>
 </html>

@@ -318,13 +318,19 @@ text-align:center;
 max-width:40px !important;
 }
 .textarea {
-max-width:200px;
-max-height:700px;
+    max-width: 300px;
+    max-height: 700px;
+    width: 300px;
 }
 .d-img {
     max-width:30px;
     max-height:30px;
     margin-right:10px;
 }
-
+.width {
+    height: 200px;
+}
+pagin:visited {
+color:white;
+}
 

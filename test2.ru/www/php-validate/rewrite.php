@@ -49,7 +49,22 @@
           
         <div class="flex-container">
         <label >Должность</label>
-    <input type="text" name="work" class="text-field_prof correct-t" value="<?php print_r($row['Work']);?>"  >
+            <select type="text" name="work" class="text-field_prof correct-t text-select" value=""  >
+        <option><?php print_r($row['Work']) ?></option>
+                <?php 
+            
+        
+                        require('../php-validate/validate/connect.php');
+                $result1 = $mysql->query("SELECT * FROM `work`");
+                while ( $row1 = mysqli_fetch_assoc( $result1 ) ) {
+                if($row['Work'] != $row1['Work']){
+        echo '<option>';
+        print_r($row1['Work']);
+        echo '</option>';
+        }
+        }
+        ?>
+    </select>
                     </div>
 
             </div>
@@ -127,7 +142,7 @@
    
         <div class="flex-container">
         <label >Комментарий</label>
-    <textarea  type="text" name="comment" class="textarea text-field_prof" value="" ><?php print_r($row['Comment']);?></textarea>
+    <textarea  type="text" name="comment" class="textarea text-field_prof width" value="" ><?php print_r($row['Comment']);?></textarea>
             </div>
          <div class="position-r-2">
         <label for="pinned">В избранное</label>

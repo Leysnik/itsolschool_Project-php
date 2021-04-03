@@ -21,5 +21,6 @@ require('../php-validate/validate/session.php');
     <script src="../scripts/checkNew.js"></script>
     <script src="../scripts/checkPrimary.js"></script>
         <script src="../scripts/handleFile.js"></script>
+    <script src="../scripts/checkDates.js"></script>
 </body>
 </html>

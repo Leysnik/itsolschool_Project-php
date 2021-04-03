@@ -13,7 +13,10 @@ $vk = $_GET['vk'];
 $instagram = $_GET['instagram'];
 $work = $_GET['work'];
 $pinned = $_GET['pinned'];
+$page = $_GET['page'];
+if($_GET['page'] == ''){$page = 1;}
 
+$all = 'name='.$name.'&surname='.$surname.'&lastname='.$lastname.'&birth_min='.$birth_min.'&birth_max='.$birth_max.'&sex='.$sex.'&city='.$city.'&tel='.$tel.'&email='.$email.'&social='.$social.'&vk='.$vk.'&instagram='.$instagram.'&work='.$work.'&pinned='.$pinned;
 ?> 
 <section id="propt" datset="<?php echo $all; ?>" class="flex-container">
     <h1 id="main">Поиск резюме</h1>
@@ -21,6 +24,7 @@ $pinned = $_GET['pinned'];
     <div class="flex-container-2">
     <div class="flex-container row">
     <div class="flex-container">
+        <input type="text" class="disable" value="<?php print_r($page); ?>">
         <label >Имя</label>
     <input type="text" name="name" class="text-field_prof" value="<?php echo $name;?>">
         </div>
@@ -45,8 +49,8 @@ $pinned = $_GET['pinned'];
     <div class="flex-container">
         <label >Возраст</label>
         <div>
-    <input type="number" name="birth_min" class="text-field_prof number" value="<?php echo $birth_min;?>" placeholder="min" min="16" >-
-        <input type="number" name="birth_max" class="text-field_prof number" value="<?php echo $birth_max;?>" placeholder="max" min="16" >
+    <input type="number" name="birth_min" class="text-field_prof number" value="<?php echo $birth_min;?>" placeholder="min" min="16" max="100">-
+        <input type="number" name="birth_max" class="text-field_prof number" value="<?php echo $birth_max;?>" placeholder="max" min="16" max="100" >
     </div>
         </div>
           
@@ -61,7 +65,21 @@ $pinned = $_GET['pinned'];
         <div class="flex-container row">          
         <div class="flex-container">
         <label >Должность</label>
-    <input type="text" name="work" class="text-field_prof correct-t" value="<?php echo $work;?>" >
+        <select type="text" name="work" class="text-field_prof correct-t text-select" value=""  >
+        <?php 
+            echo '<option>'.$work.'</option>';
+        
+                        require('../php-validate/validate/connect.php');
+                $result = $mysql->query("SELECT * FROM `work`");
+                while ( $row = mysqli_fetch_assoc( $result ) ) {
+                if($row['Work'] != $work){
+        echo '<option>';
+        print_r($row['Work']);
+        echo '</option>';
+        }
+        }
+        ?>
+    </select>
                     </div>
 
             </div>
@@ -104,5 +122,5 @@ $pinned = $_GET['pinned'];
         </div>
     <div class="flex-container-2"><a class="alter-butt butt decor" href="findPage.php">Сбросить</a></div>
 </form>
-   
+   <div class="disable all"><?php print_r($all); ?></div>
 </section>

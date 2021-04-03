@@ -9,5 +9,6 @@
     if($_SESSION['grant']):
     ?>
     <span class="butt step2-butt"><a class="direct" href="pages/createAccount.php">Пользователи</a></span>
+    <span class="butt step2-butt"><a class="direct" href="pages/createWork.php">Должности</a></span>
     <?php endif; ?>
 </section>

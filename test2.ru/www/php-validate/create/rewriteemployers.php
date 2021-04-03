@@ -45,7 +45,6 @@ if(is_uploaded_file($_FILES["testpdf"]["tmp_name"]))
 
 
 require('../validate/connect.php');
-
 $mysql->query("UPDATE `employers` SET `Name` = '$name' , `Surname` = '$surname',
                                         `Lastname` = '$lastname' , `Sex` = '$sex',
                                         `Birth` = '$birth' ,
