@@ -68,7 +68,7 @@
         <div class="flex-container row">
         <div class="flex-container">
         <label >Телефон<span class="red">*</span></label>
-    <input type="tel" name="tel" id="tel" class="text-field_prof" value=""  required>
+    <input type="tel" name="tel" id="tel" class="text-field_prof" value="" min="17" required>
             <div id="tel-d" class="red disable">Предупреждение:<br>Такой телефон уже есть в базе</div>
                     </div>
         <div class="flex-container">

@@ -81,6 +81,7 @@ tel.oninput = function () {
     tel.value = ValidPhone(tel.value);
 };
 
+
 vk.oninput = function () {
     Request = new CreateRequest();
     const url = "../php-validate/checkPrimary.php";

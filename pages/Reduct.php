@@ -28,6 +28,7 @@ $row = mysqli_fetch_assoc( $result);
 
 
         </main>
-        <script src="../scripts/handleFile.js"></script>  
+        <script src="../scripts/handleFile.js"></script> 
+    <script src="../scripts/checkDates.js"></script>
 </body>
 </html>

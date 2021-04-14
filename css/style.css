@@ -333,4 +333,21 @@ max-width:40px !important;
 pagin:visited {
 color:white;
 }
+.easy-pass {
+    background:red;
+    width:60px;
+}
+.secure {
+    transition:0.5s;
+    border-radius:15px;
+height:20px;
+}
+.medium-pass {
+    background: rgb(219, 149, 7);
+    width: 120px;
+}
+.strong-pass {
+    background: rgb(87, 198, 28);
+    width: 200px;
+}
 

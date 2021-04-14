@@ -23,9 +23,11 @@ if($_SESSION['grant'] == 0){header('Location:/');}
                 <input name="lastname"  class="text-field-2" type="text" placeholder="Отчество">
                 <br>
                 <input name="login"  class="text-field-2" type="text" placeholder="Логин" required>
-               
-                <input name="pass" id="pass" class="text-field-2" type="password" placeholder="Пароль" required>
-                <?php 
+                <div class="flex-container">
+                <input name="pass" id="pass" class="text-field-2" oninput="checkPasswords(form)" type="password" placeholder="Пароль" required>
+                <div id="box" class="secure"></div>
+                </div>
+                    <?php 
                 $error = $_GET['error'];
                 if($error == 1):
                 ?>
@@ -58,5 +60,6 @@ if($_SESSION['grant'] == 0){header('Location:/');}
                 </div>
         </section>
         </main>
+    <script src="../scripts/passSec.js"></script>
 </body>
 </html>

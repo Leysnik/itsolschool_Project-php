@@ -6,11 +6,11 @@
     <div class="flex-container-2">
     <div class="flex-container row">
     <div class="flex-container">
-        <label >Имя</label>
+        <label >Имя<span class="red">*</span></label>
     <input type="text" name="name" class="text-field_prof" value="<?php print_r($row['Name']);?>"  required>
         </div>
         <div class="flex-container">
-        <label >Фамилия</label>
+        <label >Фамилия<span class="red">*</span></label>
     <input type="text" name="surname" class="text-field_prof" value="<?php print_r($row['Surname']);?>"  required>
                     </div>
         <div class="flex-container">
@@ -20,7 +20,7 @@
         </div>
         <div class="flex-container row">
         <div class="flex-container sex">
-        <label >Пол</label>
+        <label >Пол<span class="red">*</span></label>
     <select required placeholder="Пол" name="sex" class="text-field_prof text-select">
     <option class="disable" ><?php print_r($row['Sex']);?></option>
     <option >Мужской</option>
@@ -28,14 +28,14 @@
     </select>
                     </div>
     <div class="flex-container">
-        <label >Дата рождения</label>
-    <input type="date" name="birth" class="text-field_prof" value="<?php print_r($row['Birth']);?>"  required>
+        <label >Дата рождения<span class="red">*</span></label>
+    <input type="date" name="birth" class="text-field_prof" value="<?php print_r($row['Birth']);?>" min="<?php print_r(date('Y')-100);?>-01-01" max="<?php print_r(date('Y')-16);?>-01-01"  required>
     </div>
           
  
 
         <div class="flex-container">
-        <label >Город</label>
+        <label >Город<span class="red">*</span></label>
     <input type="text" name="city" class="text-field_prof" value="<?php print_r($row['City']);?>"  required>
                     </div>
             </div>
@@ -43,13 +43,13 @@
         <div class="flex-container row">
 
     <div class="flex-container">
-        <label >Образование</label>
+        <label >Образование<span class="red">*</span></label>
     <textarea name="educatePlace" class="textarea text-field_prof" value="" placeholder="Образование" required><?php print_r($row['EducatePlace']);?></textarea>
     </div>
           
         <div class="flex-container">
-        <label >Должность</label>
-            <select type="text" name="work" class="text-field_prof correct-t text-select" value=""  >
+        <label >Должность<span class="red">*</span></label>
+            <select type="text" name="work" class="text-field_prof correct-t text-select" value=""  required>
         <option><?php print_r($row['Work']) ?></option>
                 <?php 
             
@@ -72,8 +72,8 @@
 
         <div class="flex-container row">
         <div class="flex-container">
-        <label >Телефон</label>
-    <input type="tel" name="tel" id="tel" class="text-field_prof" value="<?php print_r($row['Tel']);?>"  required>
+        <label >Телефон<span class="red">*</span></label>
+    <input type="tel" name="tel" id="tel" class="text-field_prof" min="17" value="<?php print_r($row['Tel']);?>"  required>
                     </div>
         <div class="flex-container">
         <label >Email</label>
@@ -90,8 +90,8 @@
         <div class="flex-container row">
   
     <div class="flex-container correct-t ">
-        <label >Дата собеседования</label>
-    <input type="date" id="meetday" name="meetday" class="date" value="<?php print_r($row['Meetday']);?>"  required>
+        <label >Дата собеседования<span class="red">*</span></label>
+    <input type="date" id="meetday" name="meetday" class="date" value="<?php print_r($row['Meetday']);?>" min="<?php print_r(date('Y')-20);?>-01-01" max="<?php print_r(date('Y-m-d'));?>"  required>
     </div>
     
     <div class="flex-container correct-t ">
@@ -100,8 +100,8 @@
     <input type="date" id="testtime" name="testtime" class="date" value="<?php print_r($row['Testtime']);?>" >
     </div>
     <div class="flex-container correct-t ">
-        <label>Дата размещения вакансии</label>
-    <input type="date" id="datevacantion" name="datevacantion" class="date" value="<?php print_r($row['Datevacantion']);?>" >
+        <label>Дата размещения вакансии<span class="red">*</span></label>
+    <input type="date" id="datevacantion" name="datevacantion" class="date" value="<?php print_r($row['Datevacantion']);?>" min="<?php print_r(date('Y')-20);?>-01-01" max="<?php print_r(date('Y-m-d'));?>" required >
     </div >
             </div>
       </div>
