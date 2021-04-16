@@ -1,5 +1,5 @@
-<?php 
-require('../php-validate/validate/session.php');
+<?php
+require ('../php-validate/validate/session.php');
 ?>
 <!DOCTYPE HTML>
 <html lang="ru">
@@ -12,9 +12,9 @@ require('../php-validate/validate/session.php');
 <body>
     <main>
                 <?php
-        require('../pages/header.php');      
-      require('../php-validate/create/create.php');  
- ?>
+require ('../pages/header.php');
+require ('../php-validate/create/create.php');
+?>
 
 
         </main>

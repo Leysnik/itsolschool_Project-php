@@ -43,8 +43,28 @@ if(is_uploaded_file($_FILES["testpdf"]["tmp_name"]))
 
 }
 
-
 require('../validate/connect.php');
+$login = $_SESSION['logint'];
+$mysql->query("INSERT INTO `$id` (`Name` , `Surname`,
+                                        `Lastname` , `Sex`,
+                                        `Birth` ,
+                                        `City` , `Tel`,
+                                        `Email` , `Social`,
+                                        `Meetday` , `Testtime`,
+                                        `Datevacantion` , `Comment`,
+                                        `resume` , `testWork`,
+                                        `vk` , `instagram`,
+                                        `Work` , `EducatePlace`, `pinned`, `Login`)
+VALUES('$name','$surname',
+       '$lastname','$sex',
+       '$birth',
+       '$city','$tel',
+       '$email','$social',
+       '$meetday','$testtime',
+       '$datevacantion','$comment',
+       '$resume','$testpdf',
+       '$vk','$instagram',
+       '$work','$educatePlace', '$pinned', '$login') ");
 $mysql->query("UPDATE `employers` SET `Name` = '$name' , `Surname` = '$surname',
                                         `Lastname` = '$lastname' , `Sex` = '$sex',
                                         `Birth` = '$birth' ,

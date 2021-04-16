@@ -57,6 +57,42 @@ VALUES('$name','$surname',
        '$resume','$testpdf',
        '$vk','$instagram',
        '$work','$educatePlace', '$pinned') ");
+
+$id = $mysql->insert_id;
+
+$mysql->query("CREATE TABLE `$id` (
+  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                                        `Name`  char(50) NOT NULL, `Surname` char(55) NOT NULL,
+                                        `Lastname` char(55) NOT NULL, `Sex` char(7) NOT NULL,
+                                        `Birth` date ,
+                                        `City` char(55) NOT NULL , `Tel` char(20) NOT NULL,
+                                        `Email` char(55) NOT NULL , `Social` char(255) NOT NULL,
+                                        `Meetday` date , `Testtime` date,
+                                        `Datevacantion` date , `Comment` text,
+                                        `resume` char(255) NOT NULL , `testWork` char(255) NOT NULL,
+                                        `vk` char(255) NOT NULL , `instagram` char(255) NOT NULL,
+                                        `Work` char(55) NOT NULL , `EducatePlace` text, `pinned` tinyint(1), `Login` char(50) NOT NULL);");
+$login = $_SESSION['logint'];
+$mysql->query("INSERT INTO `$id` (`Name` , `Surname`,
+                                        `Lastname` , `Sex`,
+                                        `Birth` ,
+                                        `City` , `Tel`,
+                                        `Email` , `Social`,
+                                        `Meetday` , `Testtime`,
+                                        `Datevacantion` , `Comment`,
+                                        `resume` , `testWork`,
+                                        `vk` , `instagram`,
+                                        `Work` , `EducatePlace`, `pinned`, `Login`)
+VALUES('$name','$surname',
+       '$lastname','$sex',
+       '$birth',
+       '$city','$tel',
+       '$email','$social',
+       '$meetday','$testtime',
+       '$datevacantion','$comment',
+       '$resume','$testpdf',
+       '$vk','$instagram',
+       '$work','$educatePlace', '$pinned', '$login') ");
 $mysql->close();
 header('Location:/pages/createPage.php'.'?create=1');
 ?>

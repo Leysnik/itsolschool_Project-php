@@ -10,6 +10,8 @@ let vk_d = document.getElementById('vk-d');
 let instagram_d = document.getElementById('instagram-d');
 let social_d = document.getElementById('social-d');
 
+let create = document.getElementById('create');
+
 function CreateRequest()
 {
     var Request = false;
@@ -62,6 +64,14 @@ email.oninput = function () {
 };
 
 
+tel.onchange = function () {
+    tel.value = ValidPhone(tel.value);
+};
+
+create.onsubmit = function () {
+    tel.value = ValidPhone(tel.value);
+};
+
 tel.oninput = function () {
     Request = new CreateRequest();
     const url = "../php-validate/checkPrimary.php";
@@ -75,10 +85,6 @@ tel.oninput = function () {
             if (Request.responseText == '1') { tel_d.classList.remove("disable"); } else { tel_d.classList.add("disable"); }
         }
     });
-};
-
-tel.oninput = function () {
-    tel.value = ValidPhone(tel.value);
 };
 
 

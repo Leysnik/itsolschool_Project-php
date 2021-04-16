@@ -46,7 +46,7 @@ and ($row['VK'] == $vk or $vk == '')
 and ($row['Instagram'] == $instagram or $instagram == '') 
 and ($row['Work'] == $work or $work == '') 
 and ($row['pinned'] == $pinned or $pinned == '')){
-if($number == 0){echo '<tr><th>ФИО</th><th>Пол</th><th>Дата рождения</th><th>Образование</th><th>Должность</th><th>Город</th><th>Телефон</th><th>Почта</th><th>Соц. сеть</th><th>Дата собеседования</th><th>Дата стажировки</th><th>Дата размещения вакансии</th><th>Комментарий</th><th>Файлы</th><th>Редактирование</th></tr>';}
+if($number == 0){echo '<tr><th>ФИО</th><th>Образование</th><th>Должность</th><th>Город</th><th>Соц. сеть</th><th>Файлы</th><th>Редактирование</th></tr>';}
 if($number >= ($page-1)*5 and $number <= $page*5-1){
 ?>
 
@@ -58,14 +58,7 @@ if($number >= ($page-1)*5 and $number <= $page*5-1){
     echo ' ';
     print_r( $row['Lastname'] ); 
     ?>
-</td><td class="sex-table">
-    <?php
-    print_r( $row['Sex'] );
-    ?>
- </td><td class="Birth-table">
-    <?php
-    print_r( $row['Birth'] );
-    ?>
+
 </td><td class="Place-table">
     <?php
     print_r( $row['EducatePlace'] );
@@ -77,14 +70,6 @@ if($number >= ($page-1)*5 and $number <= $page*5-1){
 </td><td class="City-table">
     <?php
     print_r( $row['City'] );
-    ?>
-</td><td class="Tel-table">
-    <?php
-    print_r( $row['Tel'] );
-    ?>
-</td><td class="Email-table">
-    <?php
-    print_r( $row['Email'] );
     ?>
 </td><td class="Social-table">
     <?php
@@ -107,24 +92,6 @@ if($number >= ($page-1)*5 and $number <= $page*5-1){
          echo '" target="_blank">Доп. соц. сеть</a>';
          }
 ?>
-</td><td class="Meet-table">
-    <?php
-    print_r( $row['Meetday'] );
-    ?>
-</td><td class="Test-table">
-    <?php
-    if($row['Testtime'] != '0000-00-00'){
-    print_r( $row['Testtime'] );
-    }
-    ?>
- </td><td class="Date-table">
-    <?php
-    print_r( $row['Datevacantion'] );
-    ?>
-</td><td class="Comment-table">
-    <?php
-    print_r( $row['Comment'] );
-    ?>
  </td><td class="Resume-table">
         <div><a download href="../resume/<?php
         print_r($row['resume']);?>
@@ -134,7 +101,7 @@ if($number >= ($page-1)*5 and $number <= $page*5-1){
         " >Тестовое задание</a></div>
 
         </td><td id="rewrite" class="rewrite-table">
-        <a target="_blank" class="direct alter-butt butt butt-table butt-table-1" href="../pages/reduct.php?id=<?php print_r($row['id']);?>" >Редактировать</a>
+        <a target="_blank" class="direct alter-butt butt butt-table butt-table-1" href="../pages/reduct.php?id=<?php print_r($row['id']);?>" >Детали</a>
         <a id="fake-delete"  class="direct alter-butt butt butt-table butt-table-2 grey">Удалить</a>
         <a id="del" idb="<?php print_r($row['id']); ?>"   class="direct alter-butt butt butt-table butt-table-2 disabled butt-del">Удалить</a>
         <a  id="still-delete"  class="disabled alter-butt butt butt-table butt-table-3 " >Скрыть</a>
