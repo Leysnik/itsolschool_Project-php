@@ -13,7 +13,7 @@ header('Location:/?error=1');
 exit();
 }
 $_SESSION['grant'] = $user['Grant'];
-$_SESSION['loginb'] = $user['Name'].$user['Surname'].$user['Lastname'];
+$_SESSION['loginb'] = $user['Name'].' '.$user['Surname'].' '.$user['Lastname'];
 $_SESSION['logint'] = $user['Login'];
 setcookie('user', $user['Login'], time() + 3600, "/");
 $mysql->close();
