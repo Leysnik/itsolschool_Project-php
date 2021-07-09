@@ -11,6 +11,7 @@ $row = mysqli_fetch_assoc( $result);
 	<html lang="ru">
 
 	<head>
+
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>
 			<?php print_r($row['Surname'].' '.$row['Name'].' '.$row['Lastname']); ?>
@@ -23,14 +24,15 @@ $row = mysqli_fetch_assoc( $result);
         require('../pages/header.php');      
 
  ?>
-			<main>
+			<main class="flex-container">
 				<?php
         
-      require('../php-validate/rewrite.php');  
+      require('../php-validate/rewrite2.php');  
  ?>
 			</main>
 			<script src="../scripts/handleFile.js"></script>
 			<script src="../scripts/checkDates.js"></script>
+		<script src="../scripts/ValidatePhone.js"></script>
 	</body>
 
 	</html>

@@ -20,7 +20,7 @@ function calculate_age($birthdayDate) {
 }
 
  if(!empty($_GET)){
-echo '<section class="table">';
+echo '<article class="table">';
 echo '<table>';
 
 require('validate/connect.php');
@@ -50,7 +50,7 @@ if($number == 0){echo '<tr><th>ФИО</th><th>Образование</th><th>Д�
 if($number >= ($page-1)*5 and $number <= $page*5-1){
 ?>
 
-<tr id="<?php print_r($row['id']); ?>"><td class="Name-table">
+<tr id="<?php print_r($row['id']); ?>"><td class="">
     <?php
     print_r( $row['Surname']);
     echo ' ';
@@ -59,19 +59,19 @@ if($number >= ($page-1)*5 and $number <= $page*5-1){
     print_r( $row['Lastname'] ); 
     ?>
 
-</td><td class="Place-table">
+</td><td class="">
     <?php
     print_r( $row['EducatePlace'] );
     ?>
-</td><td class="Work-table">
+</td><td class="">
     <?php
     print_r( $row['Work'] );
     ?>
-</td><td class="City-table">
+</td><td class="">
     <?php
     print_r( $row['City'] );
     ?>
-</td><td class="Social-table">
+</td><td class="a-black">
     <?php
     if($row['VK'] != null){
          echo '<a href="';
@@ -92,7 +92,7 @@ if($number >= ($page-1)*5 and $number <= $page*5-1){
          echo '" target="_blank">Доп. соц. сеть</a>';
          }
 ?>
- </td><td class="Resume-table">
+ </td><td class="a-black">
         <div><a download href="../resume/<?php
         print_r($row['resume']);?>
         " >Резюме</a></div>
@@ -101,10 +101,10 @@ if($number >= ($page-1)*5 and $number <= $page*5-1){
         " >Тестовое задание</a></div>
 
         </td><td id="rewrite" class="rewrite-table">
-        <a target="_blank" class="direct alter-butt butt butt-table butt-table-1" href="../pages/reduct.php?id=<?php print_r($row['id']);?>" >Детали</a>
-        <a id="fake-delete"  class="direct alter-butt butt butt-table butt-table-2 grey">Удалить</a>
-        <a id="del" idb="<?php print_r($row['id']); ?>"   class="direct alter-butt butt butt-table butt-table-2 disabled butt-del">Удалить</a>
-        <a  id="still-delete"  class="disabled alter-butt butt butt-table butt-table-3 " >Скрыть</a>
+        <a target="_blank" class="direct block" href="../pages/reduct.php?id=<?php print_r($row['id']);?>" >Детали</a>
+        <a id="fake-delete"  class="direct butt-table-2 grey block">Удалить</a>
+        <a id="del" idb="<?php print_r($row['id']); ?>"   class="direct butt-table-2 disabled butt-del block red">Удалить</a>
+        <a  id="still-delete"  class="disabled butt-table-3 block orange" >Скрыть</a>
     </td>
  
 </tr>
@@ -117,12 +117,17 @@ $number++;
  if($number == 0){echo '<h2 class="red">Записей с данными параметрами не существует</h2>';}
 $mysql->close();
 
-echo '</section>';
+echo '</article>';
 $pages = ceil(($number+5)/5);
 
 echo '</table>';
+echo '<div class="flex-container">';
+echo '<div class="flex-container-2">';
 for($i = 1; $i<$pages;$i++){
-echo '<a class="pagin alter-butt butt" href="findPage.php?'.$all.'&page='.$i.'">'.$i.'</a>';
+
+echo '<a class="butt pagin" href="findPage.php?'.$all.'&page='.$i.'">'.$i.'</a>';
 }
+echo '</div>';
+echo '</div>';
 }
  ?>

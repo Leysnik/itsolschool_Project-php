@@ -11,11 +11,10 @@ $login = $_SESSION['loginb'];
     <link rel="shortcut icon" href="img/icon.png" type="image/png">
 </head>
 <body>
-    <main>
         <?php
-
-        require('pages/header.php');  
+        require('pages/header.php'); 
         ?>
+    <main class="flex-container">
         <?php
         if ($_COOKIE['user']==''):
       require('pages/sign.php');  

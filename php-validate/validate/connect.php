@@ -1,4 +1,4 @@
 <?php
 require('session.php');
-$mysql = new mysqli('127.0.0.1', 'a0525384_test', 'sila', 'a0525384_admin');
+$mysql = new mysqli('localhost', 'trololo_admin', 'bOPlkA0D', 'trololo_admin');
 mysqli_set_charset($mysql, 'utf8');?>

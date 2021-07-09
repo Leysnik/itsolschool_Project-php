@@ -1,5 +1,5 @@
 <section class="sign-page">
-	<form action="../php-validate/validate/auth.php" method="post">
+	<form class="flex-container" action="../php-validate/validate/auth.php" method="post">
 		<div>
 			<h2><label>Вход</label></h2></div>
 		<div class="form-item">

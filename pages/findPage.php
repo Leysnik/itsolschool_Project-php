@@ -5,6 +5,7 @@ require('../php-validate/validate/session.php');
 	<html lang="ru">
 
 	<head>
+
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Поиск резюме</title>
 		<link rel="stylesheet" href="../css/style.css">
@@ -15,10 +16,10 @@ require('../php-validate/validate/session.php');
         require('../pages/header.php');      
 
  ?>
-			<main>
+			<main class="flex-container">
 				<?php
         
-      require('../php-validate/find-p.php');  
+      require('../php-validate/find-p-2.php');  
       require('../php-validate/find.php');  
  ?>
 			</main>
