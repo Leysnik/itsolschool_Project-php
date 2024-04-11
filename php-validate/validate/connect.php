@@ -1,4 +1,6 @@
 <?php
 require('session.php');
-$mysql = new mysqli('localhost', 'trololo_admin', 'bOPlkA0D', 'trololo_admin');
-mysqli_set_charset($mysql, 'utf8');?>
+//$dbhost, $dbuser, $dbpass,$dbname
+$mysql = new mysqli('', '', '', '');
+mysqli_set_charset($mysql, 'utf8');
+?>

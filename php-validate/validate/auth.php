@@ -4,7 +4,8 @@ $login = filter_var(trim($_POST['login']), FILTER_SANITIZE_STRING);
 $pass = filter_var(trim($_POST['pass']), FILTER_SANITIZE_STRING);
 $_SESSION['loginb'] = $login;
 $pass = md5($pass . 'hfgsg67');
-$mysql = new mysqli('localhost', 'trololo_admin', 'bOPlkA0D', 'trololo_admin');
+//$dbhost, $dbuser, $dbpass,$dbname
+$mysql = new mysqli('', '', '', '');
 mysqli_set_charset($mysql, 'utf8');
 $result = $mysql->query("SELECT * FROM `users` WHERE `Login` = '$login' AND `Pass` = '$pass'");
 $user = $result->fetch_assoc();
