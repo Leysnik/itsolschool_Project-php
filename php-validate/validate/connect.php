@@ -1,6 +1,6 @@
 <?php
 require('session.php');
-//$dbhost, $dbuser, $dbpass,$dbname
-$mysql = new mysqli('', '', '', '');
+require("../../config.php");
+$mysql = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 mysqli_set_charset($mysql, 'utf8');
 ?>
